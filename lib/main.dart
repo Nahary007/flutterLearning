@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projet1/Exercice/Exo2.dart';
-import 'Exemples/Exemple.dart';
+import 'Exercice/Exo3.dart';
 
 void main() => runApp(const MonApp());
 
@@ -10,8 +9,8 @@ class MonApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const Exo2(), // bien avec const
+      debugShowCheckedModeBanner: false, // j’ai enlevé le bandeau rouge
+      home: const Exo3(),
     );
   }
 }
