@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Facebook/OldLogin.dart';
-import 'Exercice/Exo5.dart';
+import 'Exercice/Exo6.dart';
 
 void main() => runApp(const MonApp());
 
@@ -12,7 +12,7 @@ class MonApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),// j’ai enlevé le bandeau rouge
-      home: const CompteurPage(),
+      home: const AnimedSquare(),
     );
   }
 }
