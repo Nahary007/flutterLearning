@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
-import 'Exemples/HomePage.dart';
+import 'package:provider/provider.dart';
+import 'Exemples/Todo.dart'; // fichier où tu as défini TodoPage et ListeTodo
 
-void main() => runApp(const MonApp());
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => ListeTodo(),
+      child: const MonApp(),
+    ),
+  );
+}
 
 class MonApp extends StatelessWidget {
   const MonApp({super.key});
@@ -10,8 +18,8 @@ class MonApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),// j’ai enlevé le bandeau rouge
-      home: const HomePage(),
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: TodoPage(), // 🚀 On démarre directement sur la TodoPage
     );
   }
 }
