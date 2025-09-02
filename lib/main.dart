@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'Exemples/Todo.dart'; // fichier où tu as défini TodoPage et ListeTodo
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'Exercice/tache_bloc.dart';
+import 'Exercice/tache_page.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => ListeTodo(),
+    BlocProvider(
+      create: (context) => TacheBloc(),
       child: const MonApp(),
-    ),
+    )
   );
 }
 
@@ -19,7 +20,7 @@ class MonApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: TodoPage(), // 🚀 On démarre directement sur la TodoPage
+      home: TachePage(),
     );
   }
 }
