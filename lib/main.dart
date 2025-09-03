@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'Exercice/GestionFavoris.dart';
+import 'Exemples/app_router.dart';
 
 void main() {
-  runApp(
-    ProviderScope(
-        child: MonApp()
-    )
-  );
+  runApp(MonApp());
 }
 
 class MonApp extends StatelessWidget {
-  const MonApp({super.key});
+  final AppRouter _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: FavorisPage(),
+    return ProviderScope(
+      child: MaterialApp(
+        title: 'Navigation structurée',
+        onGenerateRoute: _appRouter.onGenerateRoute,
+        initialRoute: AppRouter.accueil,
+      ),
     );
   }
 }
