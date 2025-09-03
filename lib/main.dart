@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'Exercice/tache_bloc.dart';
-import 'Exercice/tache_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'Exercice/GestionFavoris.dart';
 
 void main() {
   runApp(
-    BlocProvider(
-      create: (context) => TacheBloc(),
-      child: const MonApp(),
+    ProviderScope(
+        child: MonApp()
     )
   );
 }
@@ -20,7 +19,7 @@ class MonApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: TachePage(),
+      home: FavorisPage(),
     );
   }
 }
